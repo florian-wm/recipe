@@ -1,0 +1,320 @@
+[
+    {
+        "id": 3,
+        "title": "Crêpes classiques",
+        "description": "Des crêpes légères et délicieuses pour le petit-déjeuner ou le dessert.",
+        "image": "recipes\/Ik7H2GwwynuJJRdvh9t4cQpgaY7o007W7kKnflBi.jpg",
+        "is_favorite": 1,
+        "portion": 4,
+        "age": 3,
+        "created_at": "2025-06-18T11:11:23.000000Z",
+        "updated_at": "2025-06-19T11:22:06.000000Z",
+        "ingredients": [
+            {
+                "id": 1,
+                "name": "Farine",
+                "unit": "g",
+                "created_at": "2025-06-18T10:50:52.000000Z",
+                "updated_at": "2025-06-18T10:50:52.000000Z",
+                "pivot": {
+                    "recipe_id": 3,
+                    "ingredient_id": 1,
+                    "quantity": 250,
+                    "created_at": "2025-06-19T08:23:00.000000Z",
+                    "updated_at": "2025-06-19T08:23:00.000000Z"
+                }
+            },
+            {
+                "id": 3,
+                "name": "Œufs",
+                "unit": "pièce",
+                "created_at": "2025-06-18T10:50:52.000000Z",
+                "updated_at": "2025-06-18T10:50:52.000000Z",
+                "pivot": {
+                    "recipe_id": 3,
+                    "ingredient_id": 3,
+                    "quantity": 4,
+                    "created_at": "2025-06-19T08:23:00.000000Z",
+                    "updated_at": "2025-06-19T08:23:00.000000Z"
+                }
+            },
+            {
+                "id": 4,
+                "name": "Lait",
+                "unit": "ml",
+                "created_at": "2025-06-18T10:50:52.000000Z",
+                "updated_at": "2025-06-18T10:50:52.000000Z",
+                "pivot": {
+                    "recipe_id": 3,
+                    "ingredient_id": 4,
+                    "quantity": 500,
+                    "created_at": "2025-06-19T08:23:00.000000Z",
+                    "updated_at": "2025-06-19T08:23:00.000000Z"
+                }
+            },
+            {
+                "id": 5,
+                "name": "Beurre",
+                "unit": "g",
+                "created_at": "2025-06-18T10:50:52.000000Z",
+                "updated_at": "2025-06-18T10:50:52.000000Z",
+                "pivot": {
+                    "recipe_id": 3,
+                    "ingredient_id": 5,
+                    "quantity": 50,
+                    "created_at": "2025-06-19T08:23:00.000000Z",
+                    "updated_at": "2025-06-19T08:23:00.000000Z"
+                }
+            },
+            {
+                "id": 6,
+                "name": "Sel",
+                "unit": "pincée",
+                "created_at": "2025-06-18T10:50:52.000000Z",
+                "updated_at": "2025-06-18T10:50:52.000000Z",
+                "pivot": {
+                    "recipe_id": 3,
+                    "ingredient_id": 6,
+                    "quantity": 1,
+                    "created_at": "2025-06-19T08:23:00.000000Z",
+                    "updated_at": "2025-06-19T08:23:00.000000Z"
+                }
+            }
+        ],
+        "steps": [
+            {
+                "id": 41,
+                "recipe_id": 3,
+                "description": "Mélanger la farine et le sel dans un grand bol.",
+                "order": 1,
+                "created_at": "2025-06-19T08:23:00.000000Z",
+                "updated_at": "2025-06-19T08:23:00.000000Z"
+            },
+            {
+                "id": 42,
+                "recipe_id": 3,
+                "description": "Faire un puits et y casser les œufs.",
+                "order": 2,
+                "created_at": "2025-06-19T08:23:00.000000Z",
+                "updated_at": "2025-06-19T08:23:00.000000Z"
+            },
+            {
+                "id": 43,
+                "recipe_id": 3,
+                "description": "Ajouter progressivement le lait en remuant.",
+                "order": 3,
+                "created_at": "2025-06-19T08:23:00.000000Z",
+                "updated_at": "2025-06-19T08:23:00.000000Z"
+            },
+            {
+                "id": 44,
+                "recipe_id": 3,
+                "description": "Faire fondre le beurre et l'ajouter à la pâte.",
+                "order": 4,
+                "created_at": "2025-06-19T08:23:00.000000Z",
+                "updated_at": "2025-06-19T08:23:00.000000Z"
+            },
+            {
+                "id": 45,
+                "recipe_id": 3,
+                "description": "Laisser reposer 1 heure au réfrigérateur.",
+                "order": 5,
+                "created_at": "2025-06-19T08:23:00.000000Z",
+                "updated_at": "2025-06-19T08:23:00.000000Z"
+            },
+            {
+                "id": 46,
+                "recipe_id": 3,
+                "description": "Faire cuire les crêpes dans une poêle chaude.",
+                "order": 6,
+                "created_at": "2025-06-19T08:23:00.000000Z",
+                "updated_at": "2025-06-19T08:23:00.000000Z"
+            }
+        ],
+        "categories": [
+            {
+                "id": 8,
+                "name": "Traditionnel",
+                "description": "Recettes de grand-mère et classiques",
+                "color": "#6B7280",
+                "created_at": "2025-06-18T11:11:00.000000Z",
+                "updated_at": "2025-06-18T11:11:00.000000Z",
+                "pivot": {
+                    "recipe_id": 3,
+                    "category_id": 8,
+                    "created_at": "2025-06-18T11:11:23.000000Z",
+                    "updated_at": "2025-06-18T11:11:23.000000Z"
+                }
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Pâtes à la carbonara",
+        "description": "Un plat italien traditionnel avec des œufs, du fromage et du poivre.",
+        "image": "recipes\/RvoMxgpRMiSdu4uVMpNa0dUil77LkavYDojch1DA.png",
+        "is_favorite": 0,
+        "portion": 2,
+        "age": 5,
+        "created_at": "2025-06-18T11:11:23.000000Z",
+        "updated_at": "2025-06-19T08:23:20.000000Z",
+        "ingredients": [
+            {
+                "id": 13,
+                "name": "Pâtes",
+                "unit": "g",
+                "created_at": "2025-06-18T10:50:52.000000Z",
+                "updated_at": "2025-06-18T10:50:52.000000Z",
+                "pivot": {
+                    "recipe_id": 4,
+                    "ingredient_id": 13,
+                    "quantity": 200,
+                    "created_at": "2025-06-19T08:23:24.000000Z",
+                    "updated_at": "2025-06-19T08:23:24.000000Z"
+                }
+            },
+            {
+                "id": 3,
+                "name": "Œufs",
+                "unit": "pièce",
+                "created_at": "2025-06-18T10:50:52.000000Z",
+                "updated_at": "2025-06-18T10:50:52.000000Z",
+                "pivot": {
+                    "recipe_id": 4,
+                    "ingredient_id": 3,
+                    "quantity": 2,
+                    "created_at": "2025-06-19T08:23:24.000000Z",
+                    "updated_at": "2025-06-19T08:23:24.000000Z"
+                }
+            },
+            {
+                "id": 14,
+                "name": "Fromage râpé",
+                "unit": "g",
+                "created_at": "2025-06-18T10:50:52.000000Z",
+                "updated_at": "2025-06-18T10:50:52.000000Z",
+                "pivot": {
+                    "recipe_id": 4,
+                    "ingredient_id": 14,
+                    "quantity": 100,
+                    "created_at": "2025-06-19T08:23:24.000000Z",
+                    "updated_at": "2025-06-19T08:23:24.000000Z"
+                }
+            },
+            {
+                "id": 7,
+                "name": "Poivre",
+                "unit": "pincée",
+                "created_at": "2025-06-18T10:50:52.000000Z",
+                "updated_at": "2025-06-18T10:50:52.000000Z",
+                "pivot": {
+                    "recipe_id": 4,
+                    "ingredient_id": 7,
+                    "quantity": 2,
+                    "created_at": "2025-06-19T08:23:24.000000Z",
+                    "updated_at": "2025-06-19T08:23:24.000000Z"
+                }
+            },
+            {
+                "id": 6,
+                "name": "Sel",
+                "unit": "pincée",
+                "created_at": "2025-06-18T10:50:52.000000Z",
+                "updated_at": "2025-06-18T10:50:52.000000Z",
+                "pivot": {
+                    "recipe_id": 4,
+                    "ingredient_id": 6,
+                    "quantity": 1,
+                    "created_at": "2025-06-19T08:23:24.000000Z",
+                    "updated_at": "2025-06-19T08:23:24.000000Z"
+                }
+            }
+        ],
+        "steps": [
+            {
+                "id": 52,
+                "recipe_id": 4,
+                "description": "Faire cuire les pâtes dans l'eau salée.",
+                "order": 1,
+                "created_at": "2025-06-19T08:23:24.000000Z",
+                "updated_at": "2025-06-19T08:23:24.000000Z"
+            },
+            {
+                "id": 53,
+                "recipe_id": 4,
+                "description": "Battre les œufs avec le fromage râpé.",
+                "order": 2,
+                "created_at": "2025-06-19T08:23:24.000000Z",
+                "updated_at": "2025-06-19T08:23:24.000000Z"
+            },
+            {
+                "id": 54,
+                "recipe_id": 4,
+                "description": "Égoutter les pâtes en gardant un peu d'eau de cuisson.",
+                "order": 3,
+                "created_at": "2025-06-19T08:23:24.000000Z",
+                "updated_at": "2025-06-19T08:23:24.000000Z"
+            },
+            {
+                "id": 55,
+                "recipe_id": 4,
+                "description": "Mélanger les pâtes avec la préparation aux œufs.",
+                "order": 4,
+                "created_at": "2025-06-19T08:23:24.000000Z",
+                "updated_at": "2025-06-19T08:23:24.000000Z"
+            },
+            {
+                "id": 56,
+                "recipe_id": 4,
+                "description": "Ajouter du poivre fraîchement moulu et servir.",
+                "order": 5,
+                "created_at": "2025-06-19T08:23:24.000000Z",
+                "updated_at": "2025-06-19T08:23:24.000000Z"
+            }
+        ],
+        "categories": [
+            {
+                "id": 3,
+                "name": "Plats principaux",
+                "description": "Plats de résistance et repas complets",
+                "color": "#4265f0",
+                "created_at": "2025-06-18T11:11:00.000000Z",
+                "updated_at": "2025-06-19T11:17:36.000000Z",
+                "pivot": {
+                    "recipe_id": 4,
+                    "category_id": 3,
+                    "created_at": "2025-06-18T11:11:23.000000Z",
+                    "updated_at": "2025-06-18T11:11:23.000000Z"
+                }
+            },
+            {
+                "id": 9,
+                "name": "International",
+                "description": "Cuisines du monde entier",
+                "color": "#EC4899",
+                "created_at": "2025-06-18T11:11:00.000000Z",
+                "updated_at": "2025-06-18T11:11:00.000000Z",
+                "pivot": {
+                    "recipe_id": 4,
+                    "category_id": 9,
+                    "created_at": "2025-06-18T11:11:23.000000Z",
+                    "updated_at": "2025-06-18T11:11:23.000000Z"
+                }
+            },
+            {
+                "id": 7,
+                "name": "Rapide",
+                "description": "Recettes en moins de 30 minutes",
+                "color": "#F97316",
+                "created_at": "2025-06-18T11:11:00.000000Z",
+                "updated_at": "2025-06-18T11:11:00.000000Z",
+                "pivot": {
+                    "recipe_id": 4,
+                    "category_id": 7,
+                    "created_at": "2025-06-18T11:11:23.000000Z",
+                    "updated_at": "2025-06-18T11:11:23.000000Z"
+                }
+            }
+        ]
+    }
+]
