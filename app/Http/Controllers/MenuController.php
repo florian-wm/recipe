@@ -129,6 +129,6 @@ class MenuController extends Controller
     {
         $menu = Menu::findOrFail($id);
         $menu->delete();
-        return response()->json(['message' => 'Menu supprimé avec succès']);
+        return response()->json(null, 204);
     }
 }

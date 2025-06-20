@@ -82,6 +82,6 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($id);
         $category->delete();
-        return response()->json(['message' => 'Catégorie supprimée avec succès']);
+        return response()->json(null, 204);
     }
 }

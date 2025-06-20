@@ -14,17 +14,14 @@ class ShoppingListService
         foreach ($menu->recipes as $recipe) {
             foreach ($recipe->ingredients as $ingredient) {
                 $quantity = $ingredient->pivot->quantity;
-                
-                // Chercher si l'ingrédient existe déjà dans la liste
-                $existingItem = $shoppingList->first(function ($item) use ($ingredient) {
+                $index = $shoppingList->search(function ($item) use ($ingredient) {
                     return $item['ingredient_id'] === $ingredient->id;
                 });
-
-                if ($existingItem) {
-                    // Ajouter la quantité à l'ingrédient existant
-                    $existingItem['quantity'] += $quantity;
+                if ($index !== false) {
+                    $item = $shoppingList->get($index);
+                    $item['quantity'] += $quantity;
+                    $shoppingList->put($index, $item);
                 } else {
-                    // Ajouter un nouvel ingrédient
                     $shoppingList->push([
                         'ingredient_id' => $ingredient->id,
                         'name' => $ingredient->name,
@@ -34,8 +31,7 @@ class ShoppingListService
                 }
             }
         }
-
-        return $shoppingList->sortBy('name');
+        return $shoppingList->sortBy('name')->values();
     }
 
     public function generateShoppingListForRecipes(Collection $recipes): Collection
@@ -45,13 +41,13 @@ class ShoppingListService
         foreach ($recipes as $recipe) {
             foreach ($recipe->ingredients as $ingredient) {
                 $quantity = $ingredient->pivot->quantity;
-                
-                $existingItem = $shoppingList->first(function ($item) use ($ingredient) {
+                $index = $shoppingList->search(function ($item) use ($ingredient) {
                     return $item['ingredient_id'] === $ingredient->id;
                 });
-
-                if ($existingItem) {
-                    $existingItem['quantity'] += $quantity;
+                if ($index !== false) {
+                    $item = $shoppingList->get($index);
+                    $item['quantity'] += $quantity;
+                    $shoppingList->put($index, $item);
                 } else {
                     $shoppingList->push([
                         'ingredient_id' => $ingredient->id,
@@ -62,8 +58,7 @@ class ShoppingListService
                 }
             }
         }
-
-        return $shoppingList->sortBy('name');
+        return $shoppingList->sortBy('name')->values();
     }
 
     /**
@@ -118,20 +113,17 @@ class ShoppingListService
 
             foreach ($recipe->ingredients as $ingredient) {
                 $quantity = $ingredient->pivot->quantity * $multiplier;
-                
-                // Chercher si l'ingrédient existe déjà dans la liste
-                $existingItem = $shoppingList->first(function ($item) use ($ingredient) {
-                    return $item['name'] === $ingredient->name;
+                $index = $shoppingList->search(function ($item) use ($ingredient) {
+                    return $item['name'] === $ingredient->name && $item['unit'] === $ingredient->unit;
                 });
-
-                if ($existingItem) {
-                    // Ajouter la quantité à l'ingrédient existant
-                    $existingItem['total_quantity'] += $quantity;
-                    if (!in_array($recipe->title, $existingItem['recipes'])) {
-                        $existingItem['recipes'][] = $recipe->title;
+                if ($index !== false) {
+                    $item = $shoppingList->get($index);
+                    $item['total_quantity'] += $quantity;
+                    if (!in_array($recipe->title, $item['recipes'])) {
+                        $item['recipes'][] = $recipe->title;
                     }
+                    $shoppingList->put($index, $item);
                 } else {
-                    // Ajouter un nouvel ingrédient
                     $shoppingList->push([
                         'name' => $ingredient->name,
                         'unit' => $ingredient->unit,
@@ -141,7 +133,6 @@ class ShoppingListService
                 }
             }
         }
-
         return $shoppingList->sortBy('name')->values()->toArray();
     }
 } 

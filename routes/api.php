@@ -31,4 +31,7 @@ Route::delete('shopping-list/all', [App\Http\Controllers\ShoppingListController:
 Route::delete('shopping-list/{itemId}', [App\Http\Controllers\ShoppingListController::class, 'destroy']);
 
 // Custom Items
-Route::post('shopping-list/custom-item', [App\Http\Controllers\CustomItemController::class, 'store']); 
+Route::get('custom-items', [App\Http\Controllers\CustomItemController::class, 'index']);
+Route::post('custom-items', [App\Http\Controllers\CustomItemController::class, 'store']);
+Route::put('custom-items/{id}', [App\Http\Controllers\CustomItemController::class, 'update']);
+Route::delete('custom-items/{id}', [App\Http\Controllers\CustomItemController::class, 'destroy']); 

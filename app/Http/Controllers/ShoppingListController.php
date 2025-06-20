@@ -89,4 +89,43 @@ class ShoppingListController extends Controller
             'item' => $item
         ]);
     }
+
+    public function addCustomItem(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'quantity' => 'nullable|string|max:50',
+            'unit' => 'nullable|string|max:50',
+            'notes' => 'nullable|string|max:500'
+        ]);
+
+        $item = ShoppingList::addCustomItem(
+            $request->name,
+            $request->quantity ?? '1',
+            $request->unit,
+            $request->notes
+        );
+
+        return response()->json([
+            'message' => 'Élément ajouté à la liste',
+            'item' => $item
+        ], 201);
+    }
+
+    public function index()
+    {
+        $uncheckedItems = \App\Models\ShoppingList::where('is_checked', false)->get();
+        $checkedItems = \App\Models\ShoppingList::where('is_checked', true)->get();
+        return response()->json([
+            'unchecked_items' => $uncheckedItems,
+            'checked_items' => $checkedItems
+        ]);
+    }
+
+    public function destroy($itemId)
+    {
+        $item = \App\Models\ShoppingList::findOrFail($itemId);
+        $item->delete();
+        return response()->json(null, 204);
+    }
 }

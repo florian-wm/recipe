@@ -13,11 +13,7 @@ class CustomItemController extends Controller
      */
     public function index(): JsonResponse
     {
-        $items = CustomItem::where('is_saved', true)
-                          ->orderBy('usage_count', 'desc')
-                          ->orderBy('name')
-                          ->get();
-        
+        $items = CustomItem::where('is_saved', true)->get();
         return response()->json($items);
     }
 
@@ -65,30 +61,26 @@ class CustomItemController extends Controller
     /**
      * Met à jour un élément personnalisé
      */
-    public function update(Request $request, CustomItem $customItem): JsonResponse
+    public function update(\Illuminate\Http\Request $request, $id)
     {
+        $item = \App\Models\CustomItem::findOrFail($id);
         $request->validate([
             'name' => 'required|string|max:255',
             'quantity' => 'nullable|string|max:50',
             'unit' => 'nullable|string|max:50',
         ]);
-
-        $customItem->update([
-            'name' => $request->name,
-            'quantity' => $request->quantity ?? '1',
-            'unit' => $request->unit,
-        ]);
-
-        return response()->json($customItem);
+        $item->update($request->only(['name', 'quantity', 'unit']));
+        return response()->json($item);
     }
 
     /**
      * Supprime un élément personnalisé
      */
-    public function destroy(CustomItem $customItem): JsonResponse
+    public function destroy($id)
     {
-        $customItem->delete();
-        return response()->json(['message' => 'Élément supprimé avec succès']);
+        $item = \App\Models\CustomItem::findOrFail($id);
+        $item->delete();
+        return response()->json(null, 204);
     }
 
     /**

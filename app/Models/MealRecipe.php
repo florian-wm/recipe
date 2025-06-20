@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class MealRecipe extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'meal_id',
         'recipe_id',

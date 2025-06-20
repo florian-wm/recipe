@@ -80,7 +80,7 @@ class IngredientController extends Controller
     {
         $ingredient = Ingredient::findOrFail($id);
         $ingredient->delete();
-        return response()->json(['message' => 'Ingrédient supprimé avec succès']);
+        return response()->json(null, 204);
     }
 
     /**
